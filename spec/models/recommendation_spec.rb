@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Recommendation, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'validations' do
+    it 'validates presence of address' do
+      recommendation = build(:recommendation, address: nil)
+
+      expect(recommendation).not_to be_valid
+    end
+  end
 end
