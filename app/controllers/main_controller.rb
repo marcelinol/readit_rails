@@ -1,3 +1,4 @@
+# :nodoc:
 class MainController < ApplicationController
   def index
     @recommendations = ActiveSupport::HashWithIndifferentAccess.new
