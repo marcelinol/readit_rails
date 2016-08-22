@@ -1,12 +1,15 @@
 # open API to create articles
 class Api::ArticlesController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :log_request, :check_token
 
   AUTHORIZED_TOKEN = 'xunda'
 
   def create
     article = Article.new(article_params)
-    unless article.valid?
+    if article.valid?
+      article.save
+    else
       message = article.errors.messages.map do |key, value|
         "#{key} #{value.join(',')}"
       end.join(' and ')

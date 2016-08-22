@@ -43,7 +43,7 @@ describe Api::ArticlesController do
             { article: FactoryGirl.attributes_for(:article).except(:title), token: 'xunda' }
           end
           let(:expected_message) { "title can't be blank" }
-          #errors.messages.map { |key, value| "#{key} #{value.join(',')}" }
+
           before { post :create, params: params }
 
           it { expect(response).to have_http_status(:bad_request) }
@@ -60,6 +60,22 @@ describe Api::ArticlesController do
 
           it { expect(response).to have_http_status(:bad_request) }
           it { expect(response.body).to include(expected_message) }
+        end
+      end
+
+      context 'with valid params' do
+        let(:params) do
+          { article: FactoryGirl.attributes_for(:article), token: 'xunda' }
+        end
+
+        it 'returns success' do
+          post :create, params: params
+
+          expect(response).to have_http_status(:success)
+        end
+
+        it 'create a new article' do
+          expect{ post :create, params: params }.to change{ Article.count }.from(0).to(1)
         end
       end
     end
