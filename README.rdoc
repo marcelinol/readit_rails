@@ -1,28 +1,7 @@
-== README
+[![Code Climate](https://codeclimate.com/github/marcelinol/readit_rails/badges/gpa.svg)](https://codeclimate.com/github/marcelinol/readit_rails) [![Test Coverage](https://codeclimate.com/github/marcelinol/readit_rails/badges/coverage.svg)](https://codeclimate.com/github/marcelinol/readit_rails/coverage) [![Issue Count](https://codeclimate.com/github/marcelinol/readit_rails/badges/issue_count.svg)](https://codeclimate.com/github/marcelinol/readit_rails) [![Build Status](https://travis-ci.org/marcelinol/readit_rails.svg?branch=master)](https://travis-ci.org/marcelinol/readit_rails)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app has the API to receive the links and details, and also has the view to show it.
 
-Things you may want to cover:
+In the future, it could integrate with pocket, raindrop or send emails, whatever. Let's just store and show the links first, right?
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+I intend to use hubot to send links to this app to save those links to Read It later. So, when someone recommends an article or a video in slack, I tell "hubot recommend it :arrow_up:" or something like that and it will be stored here :simple_smile:
