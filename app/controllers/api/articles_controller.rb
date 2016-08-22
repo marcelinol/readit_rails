@@ -5,6 +5,13 @@ class Api::ArticlesController < ApplicationController
   AUTHORIZED_TOKEN = 'xunda'
 
   def create
+    article = Article.new(article_params)
+    unless article.valid?
+      message = article.errors.messages.map do |key, value|
+        "#{key} #{value.join(',')}"
+      end.join(' and ')
+      render plain: message, status: :bad_request
+    end
   end
 
   private
@@ -22,6 +29,6 @@ class Api::ArticlesController < ApplicationController
   end
 
   def check_token
-    render plain: "Unauthorized request.", status: 401 unless token_param == AUTHORIZED_TOKEN
+    render plain: "Unauthorized request.", status: :unauthorized unless token_param['token'] == AUTHORIZED_TOKEN
   end
 end
