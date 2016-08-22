@@ -15,6 +15,7 @@ RSpec.describe MainController, type: :controller do
 
     context 'associations' do
       let!(:article) { create(:article) }
+      let!(:video)   { create(:video) }
       let(:recommendations_types) do
         Recommendation.subclasses.collect { |x| x.name.pluralize.parameterize }
       end
@@ -27,6 +28,10 @@ RSpec.describe MainController, type: :controller do
       it { expect(assigns(:recommendations)[:articles]).to be_a(ActiveRecord::Relation) }
       it { expect(assigns(:recommendations)[:articles].first).to be_a(Article) }
       it { expect(assigns(:recommendations)[:articles]).to eq(Article.all) }
+
+      it { expect(assigns(:recommendations)[:videos]).to be_a(ActiveRecord::Relation) }
+      it { expect(assigns(:recommendations)[:videos].first).to be_a(Video) }
+      it { expect(assigns(:recommendations)[:videos]).to eq(Video.all) }
     end
   end
 
