@@ -1,28 +1,54 @@
+languages:
+    Ruby: true
+    JavaScript: true
+
 engines:
-  rubocop:
-    enabled: true
-    checks:
-    Rubocop/Metrics/ClassLength:
-      enabled: false
-  golint:
-    enabled: true
-  eslint:
+  brakeman:
+    enabled: false
+  coffeelint:
     enabled: true
   csslint:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  reek:
     enabled: true
   duplication:
     enabled: true
     config:
       languages:
       - ruby
-        #mass_threshold: 30
       - javascript
+  eslint:
+    enabled: false
+  fixme:
+    enabled: false
+  rubocop:
+    enabled: false
+  watson:
+    enabled: true
+  rubymotion:
+    enabled: false
+  foodcritic:
+    enabled: false
+
+Metrics/LineLength:
+  Max: 100
+
 ratings:
   paths:
-  - app/**
-  - lib/**
   - "**.rb"
-  - "**.go"
+  - "**.coffee"
+  - "**.js"
+  - "**.jsx"
+  - "**.css"
+  - Gemfile.lock
+
 exclude_paths:
+- config/**/*
+- db/**/*
+- db_dashboard/**/*
+- script/**/*
 - spec/**/*
-- "**/vendor/**/*"
+- test/**/*
+- vendor/**/*
