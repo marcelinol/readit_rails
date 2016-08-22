@@ -9,6 +9,7 @@ class Api::ArticlesController < ApplicationController
     article = Article.new(article_params)
     if article.valid?
       article.save
+      render plain: 'article successfuly created. Congratulations!', status: :success
     else
       message = article.errors.messages.map do |key, value|
         "#{key} #{value.join(',')}"
@@ -20,7 +21,7 @@ class Api::ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:address, :title, :tag, :recommender, :recorder)
+    params.permit(:address, :title, :tag, :recommender, :recorder)
   end
 
   def token_param
