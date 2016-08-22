@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.2"
+ruby '2.2.2'
 
 gem 'rails', '5'
 gem 'pg', '~> 0.15'
@@ -17,6 +17,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'rails-controller-testing'
+  gem 'rubocop', require: false
 end
 
 group :development do

@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :article do
-    address     'http://pudim.com.br'
-    title       'Pudim Website'
-    tag         'food'
+    address 'http://pudim.com.br'
+    title 'Pudim Website'
+    tag 'food'
     recommender 'risch'
-    recorder    'luciano'
+    recorder 'luciano'
   end
 end

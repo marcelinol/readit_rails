@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe MainController, type: :controller do
-
-  describe "GET #index" do
-    it "returns http success" do
+  describe 'GET #index' do
+    it 'returns http success' do
       get :index
       expect(response).to have_http_status(:success)
     end
@@ -34,5 +33,4 @@ RSpec.describe MainController, type: :controller do
       it { expect(assigns(:recommendations)[:videos]).to eq(Video.all) }
     end
   end
-
 end
