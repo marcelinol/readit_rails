@@ -102,6 +102,9 @@ GEM
     pg (0.18.4)
     pkg-config (1.1.7)
     powerpack (0.1.1)
+    puma (3.6.0)
+    puma-heroku (1.0.0)
+      puma (~> 3.0)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -212,6 +215,8 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg (~> 0.15)
+  puma
+  puma-heroku
   rails (= 5)
   rails-controller-testing
   rspec-rails
