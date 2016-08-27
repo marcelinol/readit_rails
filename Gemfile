@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'puma'
 gem 'puma-heroku'
+gem 'rollbar'
 
 gem 'jquery-rails'
 gem 'turbolinks'

@@ -139,6 +139,8 @@ GEM
     rake (11.2.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    rollbar (2.7.0)
+      multi_json
     rspec-core (3.5.2)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -219,6 +221,7 @@ DEPENDENCIES
   puma-heroku
   rails (= 5)
   rails-controller-testing
+  rollbar
   rspec-rails
   rubocop
   sass-rails (~> 5.0)
