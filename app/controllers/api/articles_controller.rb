@@ -11,10 +11,7 @@ class Api::ArticlesController < ApplicationController
       article.save
       render plain: 'article successfuly created. Congratulations!', status: :ok
     else
-      message = article.errors.messages.map do |key, value|
-        "#{key} #{value.join(',')}"
-      end.join(' and ')
-      render plain: message, status: :bad_request
+      render plain: creating_error_message(article.errors), status: :bad_request
     end
   end
 
@@ -34,5 +31,11 @@ class Api::ArticlesController < ApplicationController
 
   def check_token
     render plain: "Unauthorized request.", status: :unauthorized unless token_param['token'] == AUTHORIZED_TOKEN
+  end
+
+  def creating_error_message(errors)
+    message = errors.messages.map do |key, value|
+      "#{key} #{value.join(',')}"
+    end.join(' and ')
   end
 end
