@@ -1,10 +1,12 @@
 require 'mechanize'
+
+#Read recommendation info from metatags
 module MetaTagsParser
   def parse
-    page = agent_get!(address)
-    description = read_content_from_page(page, 'description')
-    title ||= read_content_from_page(page, 'title')
-    image = read_content_from_page(page, 'image')
+    @page = agent_get!(address)
+    description = read_content_from_page('description')
+    title ||= read_content_from_page('title')
+    image = read_content_from_page('image')
   rescue ArgumentError => exception
     puts exception.freeze #log this?
   end
@@ -15,8 +17,8 @@ module MetaTagsParser
       agent.get(url)
     end
 
-    def read_content_from_page(page, property)
-      result = page.at("meta[property=\"og:#{property}\"]")
-      result[:content] unless result.nil?
+    def read_content_from_page(property)
+      result = @page.at("meta[property=\"og:#{property}\"]") || {}
+      result[:content]
     end
 end
