@@ -6,7 +6,8 @@ class Api::ArticlesController < ApplicationController
   AUTHORIZED_TOKEN = 'xunda'
 
   def create
-    article = Article.new(article_params)
+    article = Article.new(article_params).extend(MetaTagsParser)
+    article.parse
     if article.valid?
       article.save
       render plain: 'article successfuly created. Congratulations!', status: :ok

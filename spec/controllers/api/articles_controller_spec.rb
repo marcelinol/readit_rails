@@ -74,6 +74,15 @@ describe Api::ArticlesController do
           expect(response).to have_http_status(:success)
         end
 
+        context 'url with metatags' do #TODO: mock mechanize result zzZZZzz
+          before do
+            params[:article][:address] = 'https://medium.com/startup-grind/12-years-a-hustler-time-to-go-home-35213b585eec#.9o5f6usml'
+          end
+          it 'get info from metatags' do
+            post :create, params
+          end
+        end
+
         it 'create a new article' do
           expect{ post :create, params: params }.to change{ Article.count }.from(0).to(1)
         end
