@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require material
 //= require_tree .
+
+
+// Material Design Lite doesn't support turbolinks by default. This code helps with it
+// https://github.com/rubysamurai/material_design_lite-sass#turbolinks
+document.addEventListener('turbolinks:load', function() {
+  componentHandler.upgradeDom();
+});
