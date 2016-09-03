@@ -1,1 +1,26 @@
 @import 'material';
+@import 'variables';
+
+body {
+  background-color: $main-bg;
+}
+
+//NOT WORKING
+
+// .mdl-layout__header {
+//   background-color: $gunmetal;
+// }
+//
+// .mdl-layout__tab-bar {
+//   background-color: $soft-gunmetal;
+// }
+
+.primary {
+  background-color: $brilliant-lavender;
+  color: $independence;
+}
+
+.cta {
+  background-color: $dark-lavender;
+  color: $white;
+}
