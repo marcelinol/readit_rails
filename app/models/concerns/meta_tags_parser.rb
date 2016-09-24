@@ -3,7 +3,7 @@ require 'mechanize'
 #Read recommendation info from metatags
 module MetaTagsParser
   def parse
-    description, title, image = read_content_from_page('description', 'title', 'image')
+    self.description, self.title, self.image = read_content_from_page('description', 'title', 'image')
   rescue ArgumentError => exception
     puts exception.freeze #log this?
   end
