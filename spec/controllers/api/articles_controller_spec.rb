@@ -18,7 +18,7 @@ describe Api::ArticlesController do
 
     context 'with an invalid token' do
       it 'returns http unauthorized' do
-        @request.env["HTTP_AUTHORIZATION"] = "Token token=invalid"
+        @request.env['HTTP_AUTHORIZATION'] = 'Token token=invalid'
         post :create, params: { article: FactoryGirl.attributes_for(:article) }
 
         expect(response).to have_http_status(:unauthorized)
@@ -26,7 +26,7 @@ describe Api::ArticlesController do
 
       it 'does not create any article' do
         expect{
-          @request.env["HTTP_AUTHORIZATION"] = "Token token=invalid"
+          @request.env['HTTP_AUTHORIZATION'] = 'Token token=invalid'
           post :create, params: { article: FactoryGirl.attributes_for(:article) }
         }.not_to change(Article, :count)
       end
@@ -34,7 +34,7 @@ describe Api::ArticlesController do
 
     context 'with a valid token' do
       it 'returns http success' do
-        @request.env["HTTP_AUTHORIZATION"] = "Token token=xunda"
+        @request.env['HTTP_AUTHORIZATION'] = 'Token token=xunda'
         post :create, params: { article: FactoryGirl.attributes_for(:article) }
 
         expect(response).to have_http_status(:success)

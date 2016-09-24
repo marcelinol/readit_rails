@@ -17,7 +17,7 @@ class Api::ArticlesController < ApplicationController
 
   private
   def authenticate
-    authenticate_or_request_with_http_token do |token, options|
+    authenticate_or_request_with_http_token do |token|
       # Compare the tokens in a time-constant manner, to mitigate
       # timing attacks.
       ActiveSupport::SecurityUtils.secure_compare(
@@ -40,7 +40,7 @@ class Api::ArticlesController < ApplicationController
   end
 
   def creating_error_message(errors)
-    message = errors.messages.map do |key, value|
+    errors.messages.map do |key, value|
       "#{key} #{value.join(',')}"
     end.join(' and ')
   end
