@@ -1,9 +1,9 @@
 # open API to create articles
 class Api::ArticlesController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :log_request, :check_token
+  before_action :log_request, :authenticate
 
-  AUTHORIZED_TOKEN = 'xunda'
+  TOKEN = 'xunda'
 
   def create
     article = Article.new(article_params).extend(MetaTagsParser)
@@ -17,6 +17,16 @@ class Api::ArticlesController < ApplicationController
   end
 
   private
+  def authenticate
+    authenticate_or_request_with_http_token do |token|
+      # Compare the tokens in a time-constant manner, to mitigate
+      # timing attacks.
+      ActiveSupport::SecurityUtils.secure_compare(
+        ::Digest::SHA256.hexdigest(token),
+        ::Digest::SHA256.hexdigest(TOKEN)
+      )
+    end
+  end
 
   def article_params
     params.require(:article).permit(:address, :title, :tag, :recommender, :recorder)
@@ -30,12 +40,8 @@ class Api::ArticlesController < ApplicationController
     Rails.logger.info "Api::ArticlesController: Request to create Article with: #{params}"
   end
 
-  def check_token
-    render plain: "Unauthorized request.", status: :unauthorized unless token_param['token'] == AUTHORIZED_TOKEN
-  end
-
   def creating_error_message(errors)
-    message = errors.messages.map do |key, value|
+    errors.messages.map do |key, value|
       "#{key} #{value.join(',')}"
     end.join(' and ')
   end
