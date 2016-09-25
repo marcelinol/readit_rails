@@ -89,7 +89,8 @@ describe Api::ArticlesController do
           context 'url with metatags' do
             let(:medium_address) { 'https://medium.com/startup-grind/12-years-a-hustler-time-to-go-home-35213b585eec#.9o5f6usml' }
             let(:params) do
-              { token: 'xunda',
+              {
+                token: 'xunda',
                 article:
                 { address: medium_address }
               }
