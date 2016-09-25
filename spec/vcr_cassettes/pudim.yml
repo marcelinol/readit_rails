@@ -1,0 +1,323 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://pudim.com.br/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mechanize/2.7.5 Ruby/2.2.2p95 (http://github.com/sparklemotion/mechanize/)
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Host:
+      - pudim.com.br
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 300
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 24 Sep 2016 21:57:56 GMT
+      Server:
+      - Apache/2.4.16 (Amazon) PHP/5.5.30
+      Last-Modified:
+      - Wed, 23 Dec 2015 01:18:20 GMT
+      Etag:
+      - '"353-527867f65e8ad"'
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '851'
+      Keep-Alive:
+      - timeout=5, max=100
+      Connection:
+      - Keep-Alive
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <title>Pudim</title>
+            <link rel="stylesheet" href="estilo.css">
+        </head>
+        <body>
+        <div>
+            <div class="container">
+                <div class="image">
+                    <img src="pudim.jpg" alt="">
+                </div>
+                <div class="email">
+                    <a href="mailto:pudim@pudim.com.br">pudim@pudim.com.br</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-28861757-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Sat, 24 Sep 2016 21:57:57 GMT
+- request:
+    method: get
+    uri: http://pudim.com.br/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mechanize/2.7.5 Ruby/2.2.2p95 (http://github.com/sparklemotion/mechanize/)
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Host:
+      - pudim.com.br
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 300
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 24 Sep 2016 21:57:56 GMT
+      Server:
+      - Apache/2.4.16 (Amazon) PHP/5.5.30
+      Last-Modified:
+      - Wed, 23 Dec 2015 01:18:20 GMT
+      Etag:
+      - '"353-527867f65e8ad"'
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '851'
+      Keep-Alive:
+      - timeout=5, max=100
+      Connection:
+      - Keep-Alive
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <title>Pudim</title>
+            <link rel="stylesheet" href="estilo.css">
+        </head>
+        <body>
+        <div>
+            <div class="container">
+                <div class="image">
+                    <img src="pudim.jpg" alt="">
+                </div>
+                <div class="email">
+                    <a href="mailto:pudim@pudim.com.br">pudim@pudim.com.br</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-28861757-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Sat, 24 Sep 2016 21:57:57 GMT
+- request:
+    method: get
+    uri: http://pudim.com.br/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mechanize/2.7.5 Ruby/2.2.2p95 (http://github.com/sparklemotion/mechanize/)
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Host:
+      - pudim.com.br
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 300
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 24 Sep 2016 21:57:56 GMT
+      Server:
+      - Apache/2.4.16 (Amazon) PHP/5.5.30
+      Last-Modified:
+      - Wed, 23 Dec 2015 01:18:20 GMT
+      Etag:
+      - '"353-527867f65e8ad"'
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '851'
+      Keep-Alive:
+      - timeout=5, max=100
+      Connection:
+      - Keep-Alive
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <title>Pudim</title>
+            <link rel="stylesheet" href="estilo.css">
+        </head>
+        <body>
+        <div>
+            <div class="container">
+                <div class="image">
+                    <img src="pudim.jpg" alt="">
+                </div>
+                <div class="email">
+                    <a href="mailto:pudim@pudim.com.br">pudim@pudim.com.br</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-28861757-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Sat, 24 Sep 2016 21:57:57 GMT
+- request:
+    method: get
+    uri: http://pudim.com.br/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mechanize/2.7.5 Ruby/2.2.2p95 (http://github.com/sparklemotion/mechanize/)
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Host:
+      - pudim.com.br
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 300
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 24 Sep 2016 21:57:57 GMT
+      Server:
+      - Apache/2.4.16 (Amazon) PHP/5.5.30
+      Last-Modified:
+      - Wed, 23 Dec 2015 01:18:20 GMT
+      Etag:
+      - '"353-527867f65e8ad"'
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '851'
+      Keep-Alive:
+      - timeout=5, max=100
+      Connection:
+      - Keep-Alive
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <title>Pudim</title>
+            <link rel="stylesheet" href="estilo.css">
+        </head>
+        <body>
+        <div>
+            <div class="container">
+                <div class="image">
+                    <img src="pudim.jpg" alt="">
+                </div>
+                <div class="email">
+                    <a href="mailto:pudim@pudim.com.br">pudim@pudim.com.br</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-28861757-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Sat, 24 Sep 2016 21:57:57 GMT
+recorded_with: VCR 2.9.3
