@@ -101,6 +101,33 @@ RSpec.describe User do
           end
         end
       end
+
+      context 'when validating password' do
+        let(:user) { build(:user, password: password) }
+
+        context 'with a tiny password' do
+          let(:password) { 'x'*5 }
+
+          it 'should not be valid' do
+            aggregate_failures do
+              expect(user).not_to be_valid
+              expect(user.errors.keys).to include(:password)
+              expect(user.errors.full_messages.first).to include('too short')
+            end
+          end
+        end
+      end
+    end
+  end
+
+  describe 'callbacks' do
+    describe 'before_save' do
+      describe 'email downcase' do
+        let(:email) { 'XunDA@examPLE.ORg' }
+        let(:user) { create(:user, email: email) }
+
+        it { expect(user.email).to eql(email.downcase) }
+      end
     end
   end
 end
