@@ -12,10 +12,12 @@
       <div class="mdl-layout__header-row mdl-color--indigo-700 mdl-color-text--white">
         <!-- Title -->
         <span class='mdl-layout-title'>Read It!</span>
+        <div class="mdl-layout-spacer"></div>
+        <%= link_to 'SIGN UP', new_user_path, class: 'mdl-navigation__link' %>
       </div>
       <!-- Tabs -->
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-        <a href="#" class="mdl-layout__tab is-active">Articles</a>
+        <%= link_to 'Articles', index_path, class: 'mdl-layout__tab is-active' %>
         <a href="#" class="mdl-layout__tab">Videos</a>
       </div>
     </header>
