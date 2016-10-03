@@ -23,6 +23,7 @@ gem 'material_design_lite-sass'
 
 ## Essentials
 gem 'bcrypt', require: false
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
