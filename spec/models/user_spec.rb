@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe User do
   let(:user) { build(:user) }
   describe 'validations' do
-
     context 'valid' do
       it { expect(user).to be_valid }
     end
@@ -25,7 +24,7 @@ RSpec.describe User do
         end
 
         context 'with a giant name' do
-          let(:name) { 'x'*51 }
+          let(:name) { 'x' * 51 }
 
           it 'should not be valid' do
             aggregate_failures do
@@ -68,7 +67,7 @@ RSpec.describe User do
         end
 
         context 'with a giant email' do
-          let(:email) { 'x'*244 + '@example.org' }
+          let(:email) { 'x' * 244 + '@example.org' }
 
           it 'should not be valid' do
             aggregate_failures do
@@ -106,7 +105,7 @@ RSpec.describe User do
         let(:user) { build(:user, password: password) }
 
         context 'with a tiny password' do
-          let(:password) { 'x'*5 }
+          let(:password) { 'x' * 5 }
 
           it 'should not be valid' do
             aggregate_failures do
