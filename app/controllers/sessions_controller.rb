@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by!(email: session_params[:email])
+    user = User.find_by!(email: session_params[:email].downcase)
     if user.authenticate(session_params[:password])
+      log_in user
       redirect_to index_path
-      # to be continued: https://www.railstutorial.org/book/basic_login
     else
       render :new, status: :unauthorized
     end
@@ -15,6 +15,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    log_out
+    redirect_to root_path
   end
 
   private
