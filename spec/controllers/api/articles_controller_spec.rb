@@ -44,7 +44,7 @@ describe Api::ArticlesController do
 
       context 'with authorization mocked' do
         before do
-          controller.stub(:authenticate).and_return(true)
+          allow(controller).to receive(:authenticate).and_return(true)
         end
 
         context 'with invalid params' do
@@ -58,8 +58,12 @@ describe Api::ArticlesController do
               VCR.use_cassette('pudim') { post :create, params: params }
             end
 
-            it { expect(response).to have_http_status(:bad_request) }
-            it { expect(response.body).to include(expected_message) }
+            it 'should be a bad request' do
+              aggregate_failures do
+                expect(response).to have_http_status(:bad_request)
+                expect(response.body).to include(expected_message)
+              end
+            end
           end
 
           context 'without address' do
@@ -70,8 +74,12 @@ describe Api::ArticlesController do
 
             before { post :create, params: params }
 
-            it { expect(response).to have_http_status(:bad_request) }
-            it { expect(response.body).to include(expected_message) }
+            it 'should be a bad request' do
+              aggregate_failures do
+                expect(response).to have_http_status(:bad_request)
+                expect(response.body).to include(expected_message)
+              end
+            end
           end
         end
 

@@ -7,8 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row mdl-color--indigo-700 mdl-color-text--white">
+        <!-- Title -->
+        <span class='mdl-layout-title'>Read It!</span>
+        <div class="mdl-layout-spacer"></div>
+        <% if logged_in? %>
+          Logged in as <%= current_user.name.upcase if current_user %>
+          <%= link_to 'SIGN OUT', log_out_path, method: :delete, class: 'mdl-navigation__link' %>
+        <% else %>
+          <%= link_to 'SIGN IN', log_in_path, class: 'mdl-navigation__link' %>
+          <%= link_to 'SIGN UP', new_user_path, class: 'mdl-navigation__link' %>
+        <% end %>
+      </div>
+      <!-- Tabs -->
+      <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+        <%= link_to 'Articles', index_path, class: 'mdl-layout__tab is-active' %>
+        <a href="#" class="mdl-layout__tab">Videos</a>
+      </div>
+    </header>
+    <br>
+    <%= yield %>
+  </div>
 </body>
 </html>
