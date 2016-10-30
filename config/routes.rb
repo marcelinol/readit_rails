@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new', as: :new_user
   post '/users/create', to: 'users#create', as: :create_user
 
-  get '/login', to: 'sessions#new', as: :new_session
-  post '/login', to: 'sessions#create', as: :create_session
-  delete '/logout', to: 'sessions#destroy', as: :destroy_session
+  get '/login', to: 'sessions#new', as: :log_in
+  post '/login', to: 'sessions#create', as: :sign_up
+  delete '/logout', to: 'sessions#destroy', as: :log_out
 end

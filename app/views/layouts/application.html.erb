@@ -15,9 +15,9 @@
         <div class="mdl-layout-spacer"></div>
         <% if logged_in? %>
           Logged in as <%= current_user.name.upcase if current_user %>
-          <%= link_to 'SIGN OUT', destroy_session_path, method: :delete, class: 'mdl-navigation__link' %>
+          <%= link_to 'SIGN OUT', log_out_path, method: :delete, class: 'mdl-navigation__link' %>
         <% else %>
-          <%= link_to 'SIGN IN', new_session_path, class: 'mdl-navigation__link' %>
+          <%= link_to 'SIGN IN', log_in_path, class: 'mdl-navigation__link' %>
           <%= link_to 'SIGN UP', new_user_path, class: 'mdl-navigation__link' %>
         <% end %>
       </div>
