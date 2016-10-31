@@ -17,4 +17,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new', as: :log_in
   post '/login', to: 'sessions#create', as: :sign_up
   delete '/logout', to: 'sessions#destroy', as: :log_out
+
+  get '/pocket/connect', to: 'pocket_accounts#connect', as: :connect_pocket
+  get '/pocket/callback', to: 'pocket_accounts#callback', as: :pocket_callback
 end

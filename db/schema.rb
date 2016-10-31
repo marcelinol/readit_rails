@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002214316) do
+ActiveRecord::Schema.define(version: 20161030232006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pocket_accounts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "access_token"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "username"
+    t.index ["user_id"], name: "index_pocket_accounts_on_user_id", using: :btree
+  end
 
   create_table "recommendations", force: :cascade do |t|
     t.string   "address"
@@ -37,4 +46,5 @@ ActiveRecord::Schema.define(version: 20161002214316) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  add_foreign_key "pocket_accounts", "users"
 end

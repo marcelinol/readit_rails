@@ -14,7 +14,12 @@
         <span class='mdl-layout-title'>Read It!</span>
         <div class="mdl-layout-spacer"></div>
         <% if logged_in? %>
-          Logged in as <%= current_user.name.upcase if current_user %>
+          Logged in as <%= current_user.name.upcase %>
+          <% if current_user.pocket_account %>
+            <%= image_tag 'pocket-icon.png', width: 32 %>
+          <% else %>
+            <%= link_to image_tag('pocket-icon.png', width: 32), connect_pocket_path, class: 'mdl-navigation__link' %>
+          <% end %>
           <%= link_to 'SIGN OUT', log_out_path, method: :delete, class: 'mdl-navigation__link' %>
         <% else %>
           <%= link_to 'SIGN IN', log_in_path, class: 'mdl-navigation__link' %>
