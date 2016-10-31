@@ -3,7 +3,7 @@ class Api::ArticlesController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :log_request, :authenticate
 
-  TOKEN = 'xunda'
+  TOKEN = ENV['AUTH_TOKEN']
 
   def create
     article = Article.new(article_params).extend(MetaTagsParser)
