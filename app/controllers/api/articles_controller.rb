@@ -10,7 +10,8 @@ class Api::ArticlesController < ApplicationController
     article.parse
     if article.valid?
       article.save
-      render plain: 'article successfuly created. Congratulations!', status: :ok
+      send_articles_to_pocket(article)
+      render plain: 'Article successfuly created. Congratulations!', status: :ok
     else
       render plain: creating_error_message(article.errors), status: :bad_request
     end
@@ -44,5 +45,11 @@ class Api::ArticlesController < ApplicationController
     errors.messages.map do |key, value|
       "#{key} #{value.join(',')}"
     end.join(' and ')
+  end
+
+  def send_articles_to_pocket(article)
+    PocketAccount.where('access_token is not NULL').each do |pocket_account|
+      Pocket.client(access_token: pocket_account.access_token).add(url: article.address, title: article.title, tags: 'readit')
+    end
   end
 end
