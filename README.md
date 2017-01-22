@@ -7,6 +7,8 @@ In the future, it could integrate with pocket, raindrop or send emails, whatever
 Hubot is already integrated with it, you can ask me for the script to recommend articles.
 For those who know capybot, you can use `capybot recommend ARTICLE_ADDRESS as ARTICLE_TITLE` or only `capybot recommend ARTICLE_ADDRESS` and the app will get the title from the article's meta-tags.
 
+The app is deployed and we use it at [Resultados Digitais](https://resultadosdigitais.com.br) [in here](http://readit-rails.herokuapp.com/).
+
 ## Contribute
 
 - Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
