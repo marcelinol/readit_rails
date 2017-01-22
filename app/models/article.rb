@@ -2,6 +2,6 @@
 class Article < Recommendation
   validates :address, format: {
     with: URI::regexp,
-    message: 'The address is invalid'
+    message: 'has invalid format'
   }
 end

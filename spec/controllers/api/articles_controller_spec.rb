@@ -52,7 +52,7 @@ describe Api::ArticlesController do
             let(:params) do
               { article: FactoryGirl.attributes_for(:article).except(:title), token: 'xunda' }
             end
-            let(:expected_message) { "title can't be blank" }
+            let(:expected_message) { "Title can't be blank" }
 
             before do
               VCR.use_cassette('pudim') { post :create, params: params }
@@ -70,7 +70,23 @@ describe Api::ArticlesController do
             let(:params) do
               { article: FactoryGirl.attributes_for(:article).except(:address), token: 'xunda' }
             end
-            let(:expected_message) { "address can't be blank" }
+            let(:expected_message) { "Address can't be blank" }
+
+            before { post :create, params: params }
+
+            it 'should be a bad request' do
+              aggregate_failures do
+                expect(response).to have_http_status(:bad_request)
+                expect(response.body).to include(expected_message)
+              end
+            end
+          end
+
+          context 'without title and without address' do
+            let(:params) do
+              { article: FactoryGirl.attributes_for(:article).except(:title).except(:address), token: 'xunda' }
+            end
+            let(:expected_message) { "Address can't be blank, Address has invalid format, Title can't be blank" }
 
             before { post :create, params: params }
 

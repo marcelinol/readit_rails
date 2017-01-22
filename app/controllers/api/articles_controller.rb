@@ -13,7 +13,7 @@ class Api::ArticlesController < ApplicationController
       send_articles_to_pocket(article)
       render plain: 'Article successfuly created. Congratulations!', status: :ok
     else
-      render plain: creating_error_message(article.errors), status: :bad_request
+      render plain: article.errors.full_messages.join(', '), status: :bad_request
     end
   end
 
@@ -39,12 +39,6 @@ class Api::ArticlesController < ApplicationController
 
   def log_request
     Rails.logger.info "Api::ArticlesController: Request to create Article with: #{params}"
-  end
-
-  def creating_error_message(errors)
-    errors.messages.map do |key, value|
-      "#{key} #{value.join(',')}"
-    end.join(' and ')
   end
 
   def send_articles_to_pocket(article)
