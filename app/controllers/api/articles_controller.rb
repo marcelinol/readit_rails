@@ -3,16 +3,17 @@ class Api::ArticlesController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :log_request, :authenticate
 
-  TOKEN = 'xunda'
+  TOKEN = ENV['AUTH_TOKEN']
 
   def create
     article = Article.new(article_params).extend(MetaTagsParser)
     article.parse
     if article.valid?
       article.save
-      render plain: 'article successfuly created. Congratulations!', status: :ok
+      send_articles_to_pocket(article)
+      render plain: 'Article successfuly created. Congratulations!', status: :ok
     else
-      render plain: creating_error_message(article.errors), status: :bad_request
+      render plain: article.errors.full_messages.join(', '), status: :bad_request
     end
   end
 
@@ -40,9 +41,9 @@ class Api::ArticlesController < ApplicationController
     Rails.logger.info "Api::ArticlesController: Request to create Article with: #{params}"
   end
 
-  def creating_error_message(errors)
-    errors.messages.map do |key, value|
-      "#{key} #{value.join(',')}"
-    end.join(' and ')
+  def send_articles_to_pocket(article)
+    PocketAccount.where('access_token is not NULL').each do |pocket_account|
+      Pocket.client(access_token: pocket_account.access_token).add(url: article.address, title: article.title, tags: 'readit')
+    end
   end
 end

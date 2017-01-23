@@ -17,6 +17,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 ## For features
 gem 'mechanize', require: false
+gem 'pocket-ruby'
 
 ## Design
 gem 'material_design_lite-sass'
@@ -26,7 +27,7 @@ gem 'bcrypt', require: false
 gem 'simple_form'
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'rails-controller-testing'

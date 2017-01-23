@@ -11,7 +11,7 @@ describe Article do
         article = Article.new(address: 'xunda', title: 'title')
         article.valid?
 
-        expect(article.errors.messages[:address]).to include('The address is invalid')
+        expect(article.errors.messages[:address]).to include('has invalid format')
       end
     end
   end

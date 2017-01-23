@@ -51,7 +51,6 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
-    byebug (9.0.5)
     codeclimate-test-reporter (0.6.0)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.1)
@@ -77,8 +76,13 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.10.0)
+      faraday (>= 0.7.4, < 0.10)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    hashie (3.4.6)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -113,6 +117,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+    multipart-post (2.0.0)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9.4)
     nio4r (1.2.1)
@@ -124,7 +129,18 @@ GEM
       ast (~> 2.2)
     pg (0.18.4)
     pkg-config (1.1.7)
+    pocket-ruby (0.0.6)
+      faraday (>= 0.7)
+      faraday_middleware (~> 0.9)
+      hashie (>= 0.4.0)
+      multi_json (~> 1.0, >= 1.0.3)
     powerpack (0.1.1)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     puma (3.6.0)
     puma-heroku (1.0.0)
       puma (~> 3.0)
@@ -207,6 +223,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    slop (3.6.0)
     spring (1.7.2)
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
@@ -245,7 +262,6 @@ DEPENDENCIES
   bcrypt
   better_errors
   binding_of_caller
-  byebug
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
   factory_girl_rails
@@ -254,6 +270,8 @@ DEPENDENCIES
   material_design_lite-sass
   mechanize
   pg (~> 0.15)
+  pocket-ruby
+  pry-rails
   puma
   puma-heroku
   rails (= 5)
@@ -274,4 +292,4 @@ RUBY VERSION
    ruby 2.2.2p95
 
 BUNDLED WITH
-   1.12.5
+   1.13.6
