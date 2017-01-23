@@ -19,6 +19,6 @@
 
 // Material Design Lite doesn't support turbolinks by default. This code helps with it
 // https://github.com/rubysamurai/material_design_lite-sass#turbolinks
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener("turbolinks:load", function() {
   componentHandler.upgradeDom();
 });

@@ -10,9 +10,9 @@ describe Api::ArticlesController do
       end
 
       it 'does not create any article' do
-        expect {
+        expect do
           post :create, params: { article: FactoryGirl.attributes_for(:article) }
-        }.not_to change(Article, :count)
+        end.not_to change(Article, :count)
       end
     end
 
@@ -25,10 +25,10 @@ describe Api::ArticlesController do
       end
 
       it 'does not create any article' do
-        expect{
+        expect do
           @request.env['HTTP_AUTHORIZATION'] = 'Token token=invalid'
           post :create, params: { article: FactoryGirl.attributes_for(:article) }
-        }.not_to change(Article, :count)
+        end.not_to change(Article, :count)
       end
     end
 
@@ -134,7 +134,7 @@ describe Api::ArticlesController do
 
           it 'create a new article' do
             VCR.use_cassette('pudim') do
-              expect { post :create, params: params }.to change{ Article.count }.from(0).to(1)
+              expect { post :create, params: params }.to change { Article.count }.from(0).to(1)
             end
           end
         end

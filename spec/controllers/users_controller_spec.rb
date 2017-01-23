@@ -21,10 +21,10 @@ RSpec.describe UsersController do
       end
 
       it 'does not create a new user' do
-        expect {
+        expect do
           post :create,
-                params: { user: FactoryGirl.attributes_for(:user, password: 'a') }
-        }.not_to change(User, :count)
+               params: { user: FactoryGirl.attributes_for(:user, password: 'a') }
+        end.not_to change(User, :count)
       end
     end
 
@@ -39,10 +39,10 @@ RSpec.describe UsersController do
       end
 
       it 'creates a new user' do
-        expect {
+        expect do
           post :create,
-                params: { user: FactoryGirl.attributes_for(:user) }
-        }.to change(User, :count).by(1)
+               params: { user: FactoryGirl.attributes_for(:user) }
+        end.to change(User, :count).by(1)
       end
     end
   end
