@@ -5,7 +5,7 @@ module MetaTagsParser
   def parse
     self.description, self.title, self.image = read_content_from_page('description', 'title', 'image')
   rescue ArgumentError => exception
-    puts exception.freeze #log this?
+    Rollbar.error(exception)
   end
 
   private
