@@ -16,7 +16,7 @@ RSpec.describe MainController, type: :controller do
       let!(:article) { create(:article) }
       let!(:video)   { create(:video) }
       let(:recommendations_types) do
-        Recommendation.subclasses.collect { |x| x.name.pluralize.parameterize }
+        Recommendation.subclasses.map { |x| x.name.pluralize.parameterize }
       end
 
       before { get :index }
