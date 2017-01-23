@@ -6,6 +6,8 @@ module MetaTagsParser
     self.description, self.title, self.image = read_content_from_page('description', 'title', 'image')
   rescue ArgumentError => exception
     Rollbar.error(exception)
+  rescue Mechanize::ResponseCodeError => exception
+    Rollbar.warning(exception)
   end
 
   private
