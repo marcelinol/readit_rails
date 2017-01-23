@@ -10,7 +10,7 @@ describe Api::ArticlesController do
       end
 
       it 'does not create any article' do
-        expect{
+        expect {
           post :create, params: { article: FactoryGirl.attributes_for(:article) }
         }.not_to change(Article, :count)
       end

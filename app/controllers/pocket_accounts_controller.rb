@@ -1,7 +1,4 @@
 class PocketAccountsController < ApplicationController
-
-  CALLBACK_URL = "http://localhost:3000/oauth/callback"
-
   def connect
     session[:code] = Pocket.get_code(redirect_uri: pocket_callback_url)
     new_url = Pocket.authorize_url(code: session[:code], redirect_uri: pocket_callback_url)
@@ -17,5 +14,4 @@ class PocketAccountsController < ApplicationController
     )
     redirect_to root_path
   end
-
 end
