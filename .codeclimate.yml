@@ -20,13 +20,13 @@ engines:
       - ruby
       - javascript
   eslint:
-    enabled: false
-  fixme:
-    enabled: false
-  rubocop:
-    enabled: false
-  watson:
     enabled: true
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+  watson:
+    enabled: false
   rubymotion:
     enabled: false
   foodcritic:
